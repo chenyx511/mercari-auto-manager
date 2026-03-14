@@ -1,0 +1,53 @@
+auto_reply:
+  check_interval_seconds: 120
+  enabled: false
+  rules:
+  - keywords:
+    - 値下げ
+    - 安く
+    - 便宜
+    - ディスカウント
+    reply: コメントありがとうございます！申し訳ございませんが、現在の価格が最低価格となっております。ご理解いただけますと幸いです。
+  - keywords:
+    - 送料
+    - 包邮
+    - 送料込み
+    reply: コメントありがとうございます！送料は出品価格に含まれております。
+  - keywords:
+    - 発送
+    - いつ届く
+    - 届く
+    reply: コメントありがとうございます！ご購入後、1〜2営業日以内に発送いたします。
+  - keywords:
+    - 状態
+    - 傷
+    - 汚れ
+    reply: コメントありがとうございます！商品の状態は出品ページに記載の通りです。追加の写真が必要でしたらお知らせください。
+browser:
+  headless: false
+  slow_mo: 500
+  user_data_dir: ./data/browser_profile
+  viewport_height: 800
+  viewport_width: 1280
+language: ja
+listing:
+  delay_between_items_seconds: 30
+  random_delay_range: 10
+logging:
+  file: ./logs/mercari_tool.log
+  level: INFO
+mercari:
+  base_url: https://jp.mercari.com
+  login_url: https://jp.mercari.com/signin
+  sell_url: https://jp.mercari.com/sell
+pricing:
+  check_interval_minutes: 60
+  enabled: false
+  min_price: 300
+  strategies:
+  - days_unsold: 1
+    discount_percent: 3
+  - days_unsold: 3
+    discount_percent: 5
+  - days_unsold: 7
+    discount_percent: 10
